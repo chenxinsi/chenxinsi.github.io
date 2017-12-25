@@ -7,10 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 25 Dec 2017 17:15:47 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 25 Dec 2017 20:53:24 +0800</lastBuildDate>
     
 	<atom:link href="https://chenxinsi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Soong</title>
+      <link>https://chenxinsi.github.io/post/soong/</link>
+      <pubDate>Mon, 25 Dec 2017 20:53:24 +0800</pubDate>
+      
+      <guid>https://chenxinsi.github.io/post/soong/</guid>
+      <description>Soong Soong是基于Android构建系统的替代品。它用Android.bp文件替换Android.mk文件，这些文件是类似JSON的简单声明性描述。
+Android.bp文件格式 按照设计，Android.bp文件非常简单。没有条件或控制流程语句 - 在Go中编写的构建逻辑中处理任何复杂性。在可能的情况下，Android.bp文件的语法和语义有意与Bazel BUILD文件类似。 Bazel BUILD files连接
+模块 Android.bp文件中的模块以模块类型开头，后面是一组name: value,格式的属性：
+cc_binary { name: &amp;quot;gzip&amp;quot;, srcs: [&amp;quot;src/test/minigzip.c&amp;quot;], shared_libs: [&amp;quot;libz&amp;quot;], stl: &amp;quot;none&amp;quot;, }  每个模块都必须有一个name属性，并且该值在所有的Android.bp文件中必须是唯一的。
+有关有效模块类型及其属性的列表，请参阅 $OUT_DIR/soong/.bootstrap/docs/soong_build.html.
+变量 一个Android.bp文件可能包含顶级变量赋值：
+gzip_srcs = [&amp;quot;src/test/minigzip.c&amp;quot;], cc_binary { name: &amp;quot;gzip&amp;quot;, srcs: gzip_srcs, shared_libs: [&amp;quot;libz&amp;quot;], stl: &amp;quot;none&amp;quot;, }  变量被限定在声明文件的其余部分，以及任何子蓝图文件中。变量是不可变的，只有一个例外 - 它们可以附加到+ =赋值，但是只有在它们被引用之前。
+注释 Android.bp文件可以包含C风格的多行/* */和C ++风格的单行//注释。
+类型 变量和属性是强类型的，变量是基于第一个赋值而动态变化的，而属性由模块类型静态地赋值。支持的类型是: * Bool (true or false) * Integers (int) * Strings (&amp;quot;string&amp;quot;) * Lists of strings ([&amp;quot;string1&amp;quot;, &amp;quot;string2&amp;quot;]) * Maps ({key1: &amp;quot;value1&amp;quot;, key2: [&amp;quot;value2&amp;quot;]})</description>
+    </item>
     
     <item>
       <title>Virtualenv</title>
