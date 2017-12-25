@@ -13,11 +13,6 @@
   </url>
   
   <url>
-    <loc>https://chenxinsi.github.io/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://chenxinsi.github.io/</loc>
     <lastmod>2017-12-25T16:15:01+08:00</lastmod>
     <priority>0</priority>
@@ -31,6 +26,11 @@
   
   <url>
     <loc>https://chenxinsi.github.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxinsi.github.io/topics/</loc>
     <priority>0</priority>
   </url>
   
