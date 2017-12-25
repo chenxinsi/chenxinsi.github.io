@@ -7,10 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 25 Dec 2017 16:15:01 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 25 Dec 2017 17:15:47 +0800</lastBuildDate>
     
 	<atom:link href="https://chenxinsi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Virtualenv</title>
+      <link>https://chenxinsi.github.io/post/virtualenv/</link>
+      <pubDate>Mon, 25 Dec 2017 17:15:47 +0800</pubDate>
+      
+      <guid>https://chenxinsi.github.io/post/virtualenv/</guid>
+      <description>[toc]
+virtualenv 安装virtualenv pip3 install virtualenv  建立独立运行环境 如果我们开发一个新的项目，需要一套独立的Python运行环境。
+one step 创建目录
+mdkir myproject cd myproject/ //我的虚拟环境： /Users/chenxinsi/PycharmProjects/python3.x  two step 创建一个独立的Python运行环境，命名为venv:
+virtualenv --no-site-packages venv  命令virtualenv就可以创建一个独立的Python运行环境，我们还加上了参数&amp;ndash;no-site-packages,这样，已经安装到系统Python环境中的所有第三方包都不会复制过来，这样我们就得到了“干净”的Python运行环境。
+进入新建的Python环境 myproject$ source venv/bin/activate (venv) myproject$  安装各种第三方包 (venv) myproject$pip install python版本号  退出(venv)Python环境 在venv环境下，用pip安装的包都被安装到venv这个环境下，系统Python环境不受影响。vnev环境是专门针对myproject这个应用创建的。 退出当前venv环境：
+(venv) myproject$ deactivate myproject$  小结 virtualenv为应用提供了隔离的Python运行环境，解决了不同应用间多版本的冲突问题。</description>
+    </item>
     
     <item>
       <title>First</title>
