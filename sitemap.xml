@@ -23,12 +23,6 @@
   </url>
   
   <url>
-    <loc>https://chenxinsi.github.io/</loc>
-    <lastmod>2017-12-25T17:51:02+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://chenxinsi.github.io/post/</loc>
     <lastmod>2017-12-25T17:15:47+08:00</lastmod>
     <priority>0</priority>
@@ -41,6 +35,12 @@
   
   <url>
     <loc>https://chenxinsi.github.io/topics/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chenxinsi.github.io/</loc>
+    <lastmod>2017-12-25T17:51:02+08:00</lastmod>
     <priority>0</priority>
   </url>
   

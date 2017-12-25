@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
+    <title>Xinsi&#39;s Blog</title>
     <link>https://chenxinsi.github.io/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <description>Recent content on Xinsi&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
@@ -54,7 +54,7 @@ virtualenv --no-site-packages venv  命令virtualenv就可以创建一个独立�
       <pubDate>Mon, 25 Dec 2017 16:14:48 +0800</pubDate>
       
       <guid>https://chenxinsi.github.io/about/</guid>
-      <description>Hello</description>
+      <description>乱世浮生</description>
     </item>
     
   </channel>
