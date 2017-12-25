@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 25 Dec 2017 17:15:47 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 25 Dec 2017 17:51:02 +0800</lastBuildDate>
     
 	<atom:link href="https://chenxinsi.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Contact</title>
+      <link>https://chenxinsi.github.io/contact/</link>
+      <pubDate>Mon, 25 Dec 2017 17:51:02 +0800</pubDate>
+      
+      <guid>https://chenxinsi.github.io/contact/</guid>
+      <description>QQ: 547187896 微信: chen547187896</description>
+    </item>
     
     <item>
       <title>Virtualenv</title>
