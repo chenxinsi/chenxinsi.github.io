@@ -276,14 +276,11 @@ Android Build系统是Android源码的一部分,用来编译Android系统，Andr
 <ul>
 <li><strong>Build系统核心文件</strong>
 定义了整个Build系统框架，而其他所有的Make文件都是在这个框架的基础上编写出来的。
-Android不同版本的build目录：
-<br />
-<br /></li>
+Android不同版本的build目录：</li>
 </ul></li>
 </ul>
 
 <p>|Android6.0|Android7.0|Android8.0|
-  |:&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;:|:&mdash;&mdash;&mdash;&mdash;&mdash;:|:&mdash;&mdash;&mdash;&mdash;-:|
   |android1|android2|android3|
   |<img src="https://raw.githubusercontent.com/chenxinsi/Pictures/master/Android6.0.1_r10_build.png" alt="image" />|<img src="https://raw.githubusercontent.com/chenxinsi/Pictures/master/Android7.0.0_r1_build.png" alt="" />|<img src="https://raw.githubusercontent.com/chenxinsi/Pictures/master/Android8.0.0_r4_build.png" alt="" />|</p>
 
@@ -292,6 +289,20 @@ Android不同版本的build目录：
 
 <li><p><strong>针对某个模块的Make文件</strong></p></li>
 </ul>
+
+<p><!-- Your front matter up here --></p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.</p>
+
+<h2 id="my-heading">My Heading</h2>
+
+<p>He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
+
+<h3 id="my-subheading">My Subheading</h3>
+
+<p>A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame. It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather. Drops</p>
 
 <h2 id="背景">背景</h2>
 
@@ -390,7 +401,7 @@ import (
 func globalDefaults(ctx android.BaseContext) ([]string) {
     var cflags []string
 
-    fmt.Println(&quot;TLV_FEATURE_ENABLED:&quot;, 
+    fmt.Println(&quot;TLV_FEATURE_ENABLED:&quot;,
         ctx.AConfig().IsEnvTrue(&quot;TLV_FEATURE_ENABLED&quot;))
     if ctx.AConfig().IsEnvTrue(&quot;TLV_FEATURE_ENABLED&quot;) {
             cflags = append(cflags, &quot;-DTLV_FEATURE_ENABLED&quot;)
@@ -410,7 +421,7 @@ func libsysutilsDefaults(ctx android.LoadHookContext) {
 
 func init() {
     fmt.Println(&quot;libsysutils: init&quot;)
-    android.RegisterModuleType(&quot;libsysutils_defaults&quot;, 
+    android.RegisterModuleType(&quot;libsysutils_defaults&quot;,
         libsysutilsDefaultsFactory)
 }
 
