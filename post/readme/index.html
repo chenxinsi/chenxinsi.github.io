@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.31.1" />
 
-  <title>2017 12 &middot; Xinsi&#39;s Blog</title>
+  <title>README &middot; Xinsi&#39;s Blog</title>
 
   
   
@@ -36,8 +36,6 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="Xinsi&#39;s Blog" href="https://chenxinsi.github.io/tags/2017-12/index.xml" />
   
 
   
@@ -114,10 +112,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://chenxinsi.github.io/tags/2017-12/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -225,16 +219,12 @@
 
 
 <div class="header">
-  <h1>2017 12</h1>
+  <h1>README</h1>
+  <h2></h2>
 </div>
-
 <div class="content">
-  
-    <article>
-  <header>
-    <h2><a href="https://chenxinsi.github.io/post/readme/">README</a></h2>
 
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
@@ -269,84 +259,101 @@
 
 </div>
 
-  </header>
+  
 
-  <p>
-  hugo基本操作 hugo创建新的markdown格式文档 进入到新建hugo目录下:
-chenxinsideMacBook-Pro:site chenxinsi$ hugo new post/README.md  生成的README.md文件将放在content/post文件夹下
-发布新建的markdown文档 hugo undraft content/post/README.md  hugo生成对应的post/index.html文件 chenxinsideMacBook-Pro:site chenxinsi$ hugo Started building sites ... Built site for language en: 0 of 1 draft rendered 0 future content 0 expired content 5 regular pages created 12 other pages created 0 non-page files copied 1 paginator pages created 1 tags created 1 topics created total in 16 ms  然后进入到public/post目录下，可以看到：
-chenxinsideMacBook-Pro:post chenxinsi$ ls first	index.
-  </p>
+<h1 id="hugo基本操作">hugo基本操作</h1>
+
+<h2 id="hugo创建新的markdown格式文档">hugo创建新的markdown格式文档</h2>
+
+<p>进入到新建hugo目录下:</p>
+
+<pre><code>chenxinsideMacBook-Pro:site chenxinsi$ hugo new post/README.md
+</code></pre>
+
+<p>生成的<strong>README.md</strong>文件将放在<strong>content/post</strong>文件夹下</p>
+
+<h2 id="发布新建的markdown文档">发布新建的markdown文档</h2>
+
+<pre><code>hugo undraft content/post/README.md
+</code></pre>
+
+<h2 id="hugo生成对应的post-index-html文件">hugo生成对应的post/index.html文件</h2>
+
+<pre><code>chenxinsideMacBook-Pro:site chenxinsi$ hugo
+Started building sites ...
+
+Built site for language en:
+0 of 1 draft rendered
+0 future content
+0 expired content
+5 regular pages created
+12 other pages created
+0 non-page files copied
+1 paginator pages created
+1 tags created
+1 topics created
+total in 16 ms
+</code></pre>
+
+<p>然后进入到<strong>public/post</strong>目录下，可以看到：</p>
+
+<pre><code>chenxinsideMacBook-Pro:post chenxinsi$ ls
+first		index.xml	soong
+index.html	readme		virtualenv
+</code></pre>
+
+<p><strong>readme</strong>文件夹生成了，里面还有<strong>index.html</strong>文件用于网站显示</p>
+
+<p>最后代码上传<strong>github</strong>仓库</p>
+
 
   
-  <footer>
-    <a href="https://chenxinsi.github.io/post/readme/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://chenxinsi.github.io/post/soong/">Soong</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>25 Dec 2017, 20:53</time>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://chenxinsi.github.io/post/soong/"><i class="fa fa-chevron-left"></i></a>
+    
   </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
+  <div class="pure-u-10-24">
     
-      <a class="post-taxonomy-topic" href="https://chenxinsi.github.iotopics/android">Android</a>
+    <nav class="prev">
+      <a href="https://chenxinsi.github.io/post/soong/">Soong</a>
+    </nav>
     
   </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://chenxinsi.github.iotags/2017-12">2017-12</a>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
     
   </div>
-  
-  
-
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
 </div>
 
-  </header>
 
-  <p>
-  Soong Soong是基于Android构建系统的替代品。它用Android.bp文件替换Android.mk文件，这些文件是类似JSON的简单声明性描述。
-Android.bp文件格式 按照设计，Android.bp文件非常简单。没有条件或控制流程语句 - 在Go中编写的构建逻辑中处理任何复杂性。在可能的情况下，Android.bp文件的语法和语义有意与Bazel BUILD文件类似。 Bazel BUILD files连接
-模块 Android.bp文件中的模块以模块类型开头，后面是一组name: value,格式的属性：
-cc_binary { name: &quot;gzip&quot;, srcs: [&quot;src/test/minigzip.c&quot;], shared_libs: [&quot;libz&quot;], stl: &quot;none&quot;, }  每个模块都必须有一个name属性，并且该值在所有的Android.bp文件中必须是唯一的。
-有关有效模块类型及其属性的列表，请参阅 $OUT_DIR/soong/.bootstrap/docs/soong_build.html.
-变量 一个Android.bp文件可能包含顶级变量赋值：
-gzip_srcs = [&quot;src/test/minigzip.c&quot;], cc_binary { name: &quot;gzip&quot;, srcs: gzip_srcs, shared_libs: [&quot;libz&quot;], stl: &quot;none&quot;, }  变量被限定在声明文件的其余部分，以及任何子蓝图文件中。变量是不可变的，只有一个例外 - 它们可以附加到+ =赋值，但是只有在它们被引用之前。
-注释 Android.bp文件可以包含C风格的多行/* */和C ++风格的单行//注释。
-类型 变量和属性是强类型的，变量是基于第一个赋值而动态变化的，而属性由模块类型静态地赋值。支持的类型是: * Bool (true or false) * Integers (int) * Strings (&quot;string&quot;) * Lists of strings ([&quot;string1&quot;, &quot;string2&quot;]) * Maps ({key1: &quot;value1&quot;, key2: [&quot;value2&quot;]})
-  </p>
 
   
-  <footer>
-    <a href="https://chenxinsi.github.io/post/soong/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
 
-  
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'xinsi';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
 </div>
 
 </div>
@@ -371,3 +378,4 @@ gzip_srcs = [&quot;src/test/minigzip.c&quot;], cc_binary { name: &quot;gzip&quot
 
 </body>
 </html>
+
