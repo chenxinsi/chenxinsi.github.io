@@ -239,7 +239,7 @@
   <div>
     <i class="fa fa-folder fa-fw"></i>
     
-      <a class="post-taxonomy-topic" href="https://chenxinsi.github.iotopics/android">Android</a>
+      <a class="post-taxonomy-topic" href="https://chenxinsi.github.iotopics/hugo">Hugo</a>
     
   </div>
   
@@ -339,11 +339,96 @@ To https://github.com/chenxinsi/chenxinsi.github.io.git
    a7370a1..1a82694  master -&gt; master
 </code></pre>
 
-<h2 id="配置文件">配置文件</h2>
+<h2 id="配置文件config-toml">配置文件config.toml</h2>
+
+<pre><code>baseURL = &quot;https://chenxinsi.github.io&quot;
+languageCode = &quot;en-us&quot;
+title = &quot;Xinsi's Blog&quot;
+#Shown in the side menu
+copyright = &quot;&amp;copy; 2017. All rights reserved.&quot;
+canonifyurls = true
+paginate = 10
+theme = &quot;blackburn&quot;
+
+[indexes]
+  tag = &quot;tags&quot;
+  topic = &quot;topics&quot;
+
+[params]
+  #Shown in the home page
+  subtitle = &quot;Move on&quot;
+  brand = &quot;Menu&quot;
+  googleAnalytics = &quot;UA-103593285-1&quot;
+  #CSS name for highlight.js
+  highlightjs = &quot;monokai&quot;
+  dateFormat = &quot;02 Jan 2006, 15:04&quot;
+  #disqusShortname
+  disqus = &quot;xinsi&quot;
+
+
+[menu]
+  #Shown in the side menu.
+  [[menu.main]]
+    name = &quot;Home&quot;
+    pre = &quot;&lt;i class='fa fa-home fa-fw'&gt;&lt;/i&gt;&quot;
+    weight = 1
+    identifier = &quot;home&quot;
+    url = &quot;/&quot;
+  [[menu.main]]
+    name = &quot;Posts&quot;
+    pre = &quot;&lt;i class='fa fa-list fa-fw'&gt;&lt;/i&gt;&quot;
+    weight = 2
+    identifier = &quot;post&quot;
+    url = &quot;/post/&quot;
+  [[menu.main]]
+    name = &quot;About&quot;
+    pre = &quot;&lt;i class='fa fa-user fa-fw'&gt;&lt;/i&gt;&quot;
+    weight = 3
+    identifier = &quot;about&quot;
+    url = &quot;/about/&quot;
+  [[menu.main]]
+    name = &quot;Contact&quot;
+    pre = &quot;&lt;i class='fa fa-phone fa-fw'&gt;&lt;/i&gt;&quot;
+    weight = 4
+    url = &quot;/contact/&quot;
+  [[menu.main]]
+    name = &quot;Topics&quot;
+    pre = &quot;&lt;i class='fa fa-folder fa-fw'&gt;&lt;/i&gt;&quot;
+    weight = 5
+    url = &quot;/topics/&quot;
+  [[menu.main]]
+    name = &quot;Tags&quot;
+    pre = &quot;&lt;i class='fa fa-tags fa-fw'&gt;&lt;/i&gt;&quot;
+    weight = 6
+    url = &quot;/tags/&quot;
+
+[social]
+
+#Link your social networking accouns to the side menu
+#by entering your username or ID.
+
+github = &quot;chenxinsi&quot;
+facebook = &quot;chenxinsi&quot;
+instagram = &quot;xinsichen&quot;
+
+</code></pre>
+
+<h2 id="tag-topic">tag&amp;&amp;topic</h2>
+
+<pre><code>---
+title: &quot;在Github使用Hugo搭建个人博客&quot;
+date: 2017-07-29T21:33:13+08:00
+draft: true
+tags: [2017-12]
+topics: [Android]
+---
+</code></pre>
+
+<p>==tags==对应的是日期标记，==topics==对应的是主题</p>
 
 <h2 id="参考">参考</h2>
 
-<p><a href="https://gdzhu8023.github.io/post/buildblog/">https://gdzhu8023.github.io/post/buildblog/</a></p>
+<p>1.<a href="https://gdzhu8023.github.io/post/buildblog/">blackburn主题详解</a></p>
 
 
   
