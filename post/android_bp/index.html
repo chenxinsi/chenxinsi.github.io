@@ -270,14 +270,15 @@
 Android Build系统是Android源码的一部分,用来编译Android系统，Android SDK以及相关文档。众所周知，Android是一个开源的操作系统，包含着大量的开源项目以及许多模块。不同的生产厂商不同的设备对于Android系统的定制都是不一样的。
 如何将这些项目和模块的编译统一管理起来，如何能够在不同的操作系统上进行编译，如何在编译时能够支持面向不同的硬件设备，不同的编译类型，还要提供面向各个厂商的定制扩展，是非常有难度的。
 但是Android Build系统很好的解决了这些问题。</li>
-<li><strong>概述</strong>
-整个Build系统的Make文件可以分为三类：
+
+<li><p><strong>概述</strong>
+整个Build系统的Make文件可以分为三类：</p>
 
 <ul>
-<li><strong>Build系统核心文件</strong>
+<li><p><strong>Build系统核心文件</strong>
 定义了整个Build系统框架，而其他所有的Make文件都是在这个框架的基础上编写出来的。
 Android不同版本的build目录：
-<table>
+<table width="600px" height="600px">
 <tr>
 <th>Android6</th>
 <th>Android7</th>
@@ -290,18 +291,12 @@ Android不同版本的build目录：
 <img width="300px"  src="https://raw.githubusercontent.com/chenxinsi/Pictures/master/Android6.0.1_r10_build.png" />
 </td>
 </tr>
-</table></li>
-</ul></li>
-</ul>
+</table></p></li>
 
-<p>|Android6.0|Android7.0|Android8.0|
-  |&mdash;|&mdash;|&mdash;|
-  |android1|android2|android3|</p>
-
-<ul>
 <li><p><strong>针对某个产品的Make文件</strong></p></li>
 
 <li><p><strong>针对某个模块的Make文件</strong></p></li>
+</ul></li>
 </ul>
 
 <h2 id="背景">背景</h2>
