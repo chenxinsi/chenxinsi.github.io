@@ -273,12 +273,12 @@
   </header>
 
   <p>
-  Android.bp 理解Android Build系统  前言 Android Build系统是Android源码的一部分,用来编译Android系统，Android SDK以及相关文档。众所周知，Android是一个开源的操作系统，包含着大量的开源项目以及许多模块。不同的生产厂商不同的设备对于Android系统的定制都是不一样的。 如何将这些项目和模块的编译统一管理起来，如何能够在不同的操作系统上进行编译，如何在编译时能够支持面向不同的硬件设备，不同的编译类型，还要提供面向各个厂商的定制扩展，是非常有难度的。 但是Android Build系统很好的解决了这些问题。 概述 整个Build系统的Make文件可以分为三类：  Build系统核心文件 定义了整个Build系统框架，而其他所有的Make文件都是在这个框架的基础上编写出来的。 Android不同版本的build目录：   |Android6.0|Android7.0|Android8.0| |&mdash;|&mdash;|&mdash;| |android1|android2|android3|
+  Android.bp 理解Android Build系统  前言 Android Build系统是Android源码的一部分,用来编译Android系统，Android SDK以及相关文档。众所周知，Android是一个开源的操作系统，包含着大量的开源项目以及许多模块。不同的生产厂商不同的设备对于Android系统的定制都是不一样的。 如何将这些项目和模块的编译统一管理起来，如何能够在不同的操作系统上进行编译，如何在编译时能够支持面向不同的硬件设备，不同的编译类型，还要提供面向各个厂商的定制扩展，是非常有难度的。 但是Android Build系统很好的解决了这些问题。 概述 整个Build系统的Make文件可以分为三类：  Build系统核心文件 定义了整个Build系统框架，而其他所有的Make文件都是在这个框架的基础上编写出来的。 Android不同版本的build目录：   Android6 Android7           |Android6.0|Android7.0|Android8.0| |&mdash;|&mdash;|&mdash;| |android1|android2|android3|
  针对某个产品的Make文件
  针对某个模块的Make文件
   背景 从Android 7.0 (N)开始, Google开始逐步使用Android.bp代替原来的Android.mk进行编译. Google称之为soong, 具体可以参考: soong
  Makefile AOSP的==android-6.0.1_r9==分支,是最后一个纯Makefile的大版本。随着时间的发展，Android项目越来越庞大，纯Makefile编译系统已经越来越不堪。不仅扩展不便，而且执行效率也不太高。从7.0版本开始，Android已经用Ninja来替代Makefile。
-   What ? 目前还存在的问题  1.对C/C++代码，如果需要使用宏开关时, 由于android整个编译系统还没完全切换过来, 导致 在项目mk文件定义的开关, 还不能生效. 解决： a.通过export命令, 把相应的开关设置到环境变量, go文件就能读取到了. b.把开关集中放到某一个文件中, 然后在go文件中直接读取这个文件. 2.对于条件编译, 需要添加go文件进行控制. 解决： 下面是一个libsysutils模块Android.bp的内容: libsysutils_defaults以上及相关内容是新添加关键部分, 用来支持go文件进行条件编译. 如果想让TLV_FEATURE_ENABLED起作用, 需要export TLV_FEATURE_ENABLED=yes.  示例如下： Android.bp
+   What ? 目前还存在的问题  1.对C/C++代码，如果需要使用宏开关时, 由于android整个编译系统还没完全切换过来, 导致 在项目mk文件定义的开关, 还不能生效. 解决： a.通过export命令, 把相应的开关设置到环境变量, go文件就能读取到了. b.把开关集中放到某一个文件中, 然后在go文件中直接读取这个文件. 2.
   </p>
 
   
