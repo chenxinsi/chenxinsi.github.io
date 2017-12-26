@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.31.1" />
 
-  <title>README &middot; Xinsi&#39;s Blog</title>
+  <title>Android_bp &middot; Xinsi&#39;s Blog</title>
 
   
   
@@ -219,7 +219,7 @@
 
 
 <div class="header">
-  <h1>README</h1>
+  <h1>Android_bp</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -228,7 +228,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>26 Dec 2017, 10:00</time>
+    <time>26 Dec 2017, 14:40</time>
   </div>
 
   
@@ -239,7 +239,7 @@
   <div>
     <i class="fa fa-folder fa-fw"></i>
     
-      <a class="post-taxonomy-topic" href="https://chenxinsi.github.iotopics/hugo">Hugo</a>
+      <a class="post-taxonomy-topic" href="https://chenxinsi.github.iotopics/android">Android</a>
     
   </div>
   
@@ -261,187 +261,178 @@
 
   
 
-<h1 id="hugo基本操作">hugo基本操作</h1>
+<h1 id="android-bp">Android.bp</h1>
 
-<h2 id="hugo创建新的markdown格式文档">hugo创建新的markdown格式文档</h2>
-
-<p>进入到新建hugo目录下:</p>
-
-<pre><code>chenxinsideMacBook-Pro:site chenxinsi$ hugo new post/README.md
-</code></pre>
-
-<p>生成的<strong>README.md</strong>文件将放在<strong>content/post</strong>文件夹下</p>
-
-<h2 id="发布新建的markdown文档">发布新建的markdown文档</h2>
-
-<pre><code>hugo undraft content/post/README.md
-</code></pre>
-
-<h2 id="hugo生成对应的post-index-html文件">hugo生成对应的post/index.html文件</h2>
-
-<pre><code>chenxinsideMacBook-Pro:site chenxinsi$ hugo
-Started building sites ...
-
-Built site for language en:
-0 of 1 draft rendered
-0 future content
-0 expired content
-5 regular pages created
-12 other pages created
-0 non-page files copied
-1 paginator pages created
-1 tags created
-1 topics created
-total in 16 ms
-</code></pre>
-
-<p>然后进入到<strong>public/post</strong>目录下，可以看到：</p>
-
-<pre><code>chenxinsideMacBook-Pro:post chenxinsi$ ls
-first		index.xml	soong
-index.html	readme		virtualenv
-</code></pre>
-
-<p><strong>readme</strong>文件夹生成了，里面还有<strong>index.html</strong>文件用于网站显示</p>
-
-<h2 id="最后代码上传-github-仓库">最后代码上传<strong>github</strong>仓库</h2>
+<h2 id="理解android-build系统">理解Android Build系统</h2>
 
 <ul>
-<li>add到暂存区</li>
-</ul>
-
-<pre><code>chenxinsideMacBook-Pro:public chenxinsi$ git add --all
-</code></pre>
-
-<ul>
-<li>commit</li>
-</ul>
-
-<pre><code>chenxinsideMacBook-Pro:public chenxinsi$ git commit -m &quot;add readme&quot;
-[master 1a82694] add readme
-...
-15 files changed, 627 insertions(+), 16 deletions(-)
-create mode 100644 post/readme/index.html
-</code></pre>
+<li><strong>前言</strong>
+Android Build系统是Android源码的一部分,用来编译Android系统，Android SDK以及相关文档。众所周知，Android是一个开源的操作系统，包含着大量的开源项目以及许多模块。不同的生产厂商不同的设备对于Android系统的定制都是不一样的。
+如何将这些项目和模块的编译统一管理起来，如何能够在不同的操作系统上进行编译，如何在编译时能够支持面向不同的硬件设备，不同的编译类型，还要提供面向各个厂商的定制扩展，是非常有难度的。
+但是Android Build系统很好的解决了这些问题。</li>
+<li><strong>概述</strong>
+整个Build系统的Make文件可以分为三类：
 
 <ul>
-<li>push到github仓库</li>
+<li><strong>Build系统核心文件</strong>
+定义了整个Build系统框架，而其他所有的Make文件都是在这个框架的基础上编写出来的。
+<br /></li>
+</ul></li>
 </ul>
 
-<pre><code>chenxinsideMacBook-Pro:public chenxinsi$ git push
-Counting objects: 24, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (22/22), done.
-Writing objects: 100% (24/24), 4.49 KiB | 0 bytes/s, done.
-Total 24 (delta 16), reused 0 (delta 0)
-remote: Resolving deltas: 100% (16/16), completed with 10 local objects.
-To https://github.com/chenxinsi/chenxinsi.github.io.git
-   a7370a1..1a82694  master -&gt; master
+<p>Android不同版本的build目录：
+  |Android6.0|Android7.0|Android8.0|
+  |&ndash;|&ndash;|&ndash;|
+  |<img src="https://raw.githubusercontent.com/chenxinsi/Pictures/master/Android6.0.1_r10_build.png" alt="image" />|<img src="https://raw.githubusercontent.com/chenxinsi/Pictures/master/Android7.0.0_r1_build.png" alt="" />|<img src="https://raw.githubusercontent.com/chenxinsi/Pictures/master/Android8.0.0_r4_build.png" alt="" />|
+  - <strong>针对某个产品的Make文件</strong></p>
+
+<ul>
+<li><strong>针对某个模块的Make文件</strong>
+
+<br /></li>
+</ul>
+
+<h2 id="背景">背景</h2>
+
+<p>从Android 7.0 (N)开始, Google开始逐步使用<strong>Android.bp</strong>代替原来的<strong>Android.mk</strong>进行编译.
+Google称之为soong, 具体可以参考:
+<a href="https://android.googlesource.com/platform/build/soong">soong</a></p>
+
+<ul>
+<li><p><strong>Makefile</strong>
+AOSP的==android-6.0.1_r9==分支,是最后一个纯Makefile的大版本。随着时间的发展，Android项目越来越庞大，纯Makefile编译系统已经越来越不堪。不仅扩展不便，而且执行效率也不太高。从7.0版本开始，Android已经用Ninja来替代Makefile。</p></li>
+
+<li><hr /></li>
+</ul>
+
+<h2 id="what">What ?</h2>
+
+<h2 id="目前还存在的问题">目前还存在的问题</h2>
+
+<ul>
+<li>1.对C/C++代码，如果需要使用宏开关时, 由于android整个编译系统还没完全切换过来, 导致 在项目mk文件定义的开关, 还不能生效.
+  解决：
+  a.通过export命令, 把相应的开关设置到环境变量, go文件就能读取到了.
+  b.把开关集中放到某一个文件中, 然后在go文件中直接读取这个文件.</li>
+<li>2.对于条件编译, 需要添加go文件进行控制.
+  解决：
+  下面是一个libsysutils模块Android.bp的内容: libsysutils_defaults以上及相关内容是新添加关键部分, 用来支持go文件进行条件编译. 如果想让TLV_FEATURE_ENABLED起作用, 需要export TLV_FEATURE_ENABLED=yes.</li>
+</ul>
+
+<p>示例如下：
+<strong>Android.bp</strong></p>
+
+<pre><code>bootstrap_go_package {
+    name: &quot;soong-libsysutils&quot;,
+    pkgPath: &quot;android/soong/system/core/libsysutils&quot;,
+    deps: [
+        &quot;blueprint&quot;,
+        &quot;blueprint-pathtools&quot;,
+        &quot;soong&quot;,
+        &quot;soong-android&quot;,
+        &quot;soong-cc&quot;,
+        &quot;soong-genrule&quot;,
+    ],
+    srcs: [
+        &quot;libsysutils.go&quot;,
+    ],
+    pluginFor: [&quot;soong_build&quot;],
+}
+
+libsysutils_defaults {
+    name: &quot;libsysutils_defaults&quot;,
+}
+cc_library_shared {
+    name: &quot;libsysutils&quot;,
+    vendor_available: true,
+
+    defaults: [
+        &quot;libsysutils_defaults&quot;,
+    ],
+
+    srcs: [
+        &quot;src/SocketListener.cpp&quot;,
+        &quot;src/FrameworkListener.cpp&quot;,
+        &quot;src/NetlinkListener.cpp&quot;,
+        &quot;src/NetlinkEvent.cpp&quot;,
+        &quot;src/FrameworkCommand.cpp&quot;,
+        &quot;src/SocketClient.cpp&quot;,
+        &quot;src/ServiceManager.cpp&quot;,
+    ],
+
+    logtags: [&quot;EventLogTags.logtags&quot;],
+
+    cflags: [&quot;-Werror&quot;],
+
+    shared_libs: [
+        &quot;libbase&quot;,
+        &quot;libcutils&quot;,
+        &quot;liblog&quot;,
+        &quot;libnl&quot;,
+    ],
+
+    export_include_dirs: [&quot;include&quot;],
+}
 </code></pre>
 
-<h2 id="配置文件config-toml">配置文件config.toml</h2>
+<p>下面是对应的libsysutils.go文件内容, fmt模块是用来调试的, 完成之后可以删除.</p>
 
-<pre><code>baseURL = &quot;https://chenxinsi.github.io&quot;
-languageCode = &quot;en-us&quot;
-title = &quot;Xinsi's Blog&quot;
-#Shown in the side menu
-copyright = &quot;&amp;copy; 2017. All rights reserved.&quot;
-canonifyurls = true
-paginate = 10
-theme = &quot;blackburn&quot;
+<pre><code>package libsysutils
 
-[indexes]
-  tag = &quot;tags&quot;
-  topic = &quot;topics&quot;
+import (
+    &quot;android/soong/android&quot;
+    &quot;android/soong/cc&quot;
+    &quot;github.com/google/blueprint&quot;
+    &quot;fmt&quot;
+)
 
-[params]
-  #Shown in the home page
-  subtitle = &quot;Move on&quot;
-  brand = &quot;Menu&quot;
-  googleAnalytics = &quot;UA-103593285-1&quot;
-  #CSS name for highlight.js
-  highlightjs = &quot;monokai&quot;
-  dateFormat = &quot;02 Jan 2006, 15:04&quot;
-  #disqusShortname
-  disqus = &quot;xinsi&quot;
+func globalDefaults(ctx android.BaseContext) ([]string) {
+    var cflags []string
 
+    fmt.Println(&quot;TLV_FEATURE_ENABLED:&quot;, 
+        ctx.AConfig().IsEnvTrue(&quot;TLV_FEATURE_ENABLED&quot;))
+    if ctx.AConfig().IsEnvTrue(&quot;TLV_FEATURE_ENABLED&quot;) {
+            cflags = append(cflags, &quot;-DTLV_FEATURE_ENABLED&quot;)
+    }
 
-[menu]
-  #Shown in the side menu.
-  [[menu.main]]
-    name = &quot;Home&quot;
-    pre = &quot;&lt;i class='fa fa-home fa-fw'&gt;&lt;/i&gt;&quot;
-    weight = 1
-    identifier = &quot;home&quot;
-    url = &quot;/&quot;
-  [[menu.main]]
-    name = &quot;Posts&quot;
-    pre = &quot;&lt;i class='fa fa-list fa-fw'&gt;&lt;/i&gt;&quot;
-    weight = 2
-    identifier = &quot;post&quot;
-    url = &quot;/post/&quot;
-  [[menu.main]]
-    name = &quot;About&quot;
-    pre = &quot;&lt;i class='fa fa-user fa-fw'&gt;&lt;/i&gt;&quot;
-    weight = 3
-    identifier = &quot;about&quot;
-    url = &quot;/about/&quot;
-  [[menu.main]]
-    name = &quot;Contact&quot;
-    pre = &quot;&lt;i class='fa fa-phone fa-fw'&gt;&lt;/i&gt;&quot;
-    weight = 4
-    url = &quot;/contact/&quot;
-  [[menu.main]]
-    name = &quot;Topics&quot;
-    pre = &quot;&lt;i class='fa fa-folder fa-fw'&gt;&lt;/i&gt;&quot;
-    weight = 5
-    url = &quot;/topics/&quot;
-  [[menu.main]]
-    name = &quot;Tags&quot;
-    pre = &quot;&lt;i class='fa fa-tags fa-fw'&gt;&lt;/i&gt;&quot;
-    weight = 6
-    url = &quot;/tags/&quot;
+    return cflags
+}
 
-[social]
+func libsysutilsDefaults(ctx android.LoadHookContext) {
+    type props struct {
+    Cflags []string
+    }
+   p := &amp;props{}
+   p.Cflags = globalDefaults(ctx)
+   ctx.AppendProperties(p)
+}
 
-#Link your social networking accouns to the side menu
-#by entering your username or ID.
+func init() {
+    fmt.Println(&quot;libsysutils: init&quot;)
+    android.RegisterModuleType(&quot;libsysutils_defaults&quot;, 
+        libsysutilsDefaultsFactory)
+}
 
-github = &quot;chenxinsi&quot;
-facebook = &quot;chenxinsi&quot;
-instagram = &quot;xinsichen&quot;
-
+func libsysutilsDefaultsFactory() (blueprint.Module, []interface{}) {
+    module, props := cc.DefaultsFactory()
+    android.AddLoadHook(module, libsysutilsDefaults)
+    fmt.Println(&quot;libsysutils: libsysutilsDefaultsFactory&quot;)
+    return module, props
+}
 </code></pre>
-
-<h2 id="tag-topic">tag&amp;&amp;topic</h2>
-
-<pre><code>---
-title: &quot;在Github使用Hugo搭建个人博客&quot;
-date: 2017-07-29T21:33:13+08:00
-draft: true
-tags: [2017-12]
-topics: [Android]
----
-</code></pre>
-
-<p>==tags==对应的是日期标记，==topics==对应的是主题</p>
-
-<h2 id="参考">参考</h2>
-
-<p>1.<a href="https://gdzhu8023.github.io/post/buildblog/">blackburn主题详解</a></p>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://chenxinsi.github.io/post/soong/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://chenxinsi.github.io/post/readme/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://chenxinsi.github.io/post/soong/">Soong</a>
+      <a href="https://chenxinsi.github.io/post/readme/">README</a>
     </nav>
     
   </div>
@@ -450,14 +441,8 @@ topics: [Android]
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="https://chenxinsi.github.io/post/android_bp/">Android_bp</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://chenxinsi.github.io/post/android_bp/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>

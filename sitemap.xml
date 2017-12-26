@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chenxinsi.github.io/post/android_bp/</loc>
+    <lastmod>2017-12-26T14:40:44+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chenxinsi.github.io/post/readme/</loc>
     <lastmod>2017-12-26T10:00:21+08:00</lastmod>
   </url>
@@ -34,13 +39,13 @@
   
   <url>
     <loc>https://chenxinsi.github.io/tags/2017-12/</loc>
-    <lastmod>2017-12-26T10:00:21+08:00</lastmod>
+    <lastmod>2017-12-26T14:40:44+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://chenxinsi.github.io/topics/android/</loc>
-    <lastmod>2017-12-25T20:53:24+08:00</lastmod>
+    <lastmod>2017-12-26T14:40:44+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -52,25 +57,25 @@
   
   <url>
     <loc>https://chenxinsi.github.io/post/</loc>
-    <lastmod>2017-12-26T10:00:21+08:00</lastmod>
+    <lastmod>2017-12-26T14:40:44+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://chenxinsi.github.io/tags/</loc>
-    <lastmod>2017-12-26T10:00:21+08:00</lastmod>
+    <lastmod>2017-12-26T14:40:44+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://chenxinsi.github.io/topics/</loc>
-    <lastmod>2017-12-25T20:53:24+08:00</lastmod>
+    <lastmod>2017-12-26T14:40:44+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://chenxinsi.github.io/</loc>
-    <lastmod>2017-12-26T10:00:21+08:00</lastmod>
+    <lastmod>2017-12-26T14:40:44+08:00</lastmod>
     <priority>0</priority>
   </url>
   
